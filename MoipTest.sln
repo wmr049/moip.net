@@ -1,42 +1,25 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoipTest", "MoipTest\MoipTest.csproj", "{9CC95F59-55F4-469C-A666-D4A8BBD91B09}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moip.Net", "Moip.Net\Moip.Net.csproj", "{ABED97B6-5479-46AA-9570-1012A9908263}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoipTest", "MoipTest\MoipTest.csproj", "{834F511B-D10A-460F-B2E4-9903DCFB06DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
-		Debug|Mixed Platforms = Debug|Mixed Platforms
-		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
-		Release|Mixed Platforms = Release|Mixed Platforms
-		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9CC95F59-55F4-469C-A666-D4A8BBD91B09}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{9CC95F59-55F4-469C-A666-D4A8BBD91B09}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{9CC95F59-55F4-469C-A666-D4A8BBD91B09}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{9CC95F59-55F4-469C-A666-D4A8BBD91B09}.Debug|x86.ActiveCfg = Debug|x86
-		{9CC95F59-55F4-469C-A666-D4A8BBD91B09}.Debug|x86.Build.0 = Debug|x86
-		{9CC95F59-55F4-469C-A666-D4A8BBD91B09}.Release|Any CPU.ActiveCfg = Release|x86
-		{9CC95F59-55F4-469C-A666-D4A8BBD91B09}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{9CC95F59-55F4-469C-A666-D4A8BBD91B09}.Release|Mixed Platforms.Build.0 = Release|x86
-		{9CC95F59-55F4-469C-A666-D4A8BBD91B09}.Release|x86.ActiveCfg = Release|x86
-		{9CC95F59-55F4-469C-A666-D4A8BBD91B09}.Release|x86.Build.0 = Release|x86
-		{ABED97B6-5479-46AA-9570-1012A9908263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ABED97B6-5479-46AA-9570-1012A9908263}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ABED97B6-5479-46AA-9570-1012A9908263}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{ABED97B6-5479-46AA-9570-1012A9908263}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{ABED97B6-5479-46AA-9570-1012A9908263}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{ABED97B6-5479-46AA-9570-1012A9908263}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ABED97B6-5479-46AA-9570-1012A9908263}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ABED97B6-5479-46AA-9570-1012A9908263}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{ABED97B6-5479-46AA-9570-1012A9908263}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{ABED97B6-5479-46AA-9570-1012A9908263}.Release|x86.ActiveCfg = Release|Any CPU
+		{834F511B-D10A-460F-B2E4-9903DCFB06DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{834F511B-D10A-460F-B2E4-9903DCFB06DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{834F511B-D10A-460F-B2E4-9903DCFB06DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{834F511B-D10A-460F-B2E4-9903DCFB06DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9EAAA760-180D-4910-9A1B-3AD013E10F64}
 	EndGlobalSection
 EndGlobal
