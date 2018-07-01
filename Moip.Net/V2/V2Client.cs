@@ -196,6 +196,16 @@ namespace Moip.Net.V2
             return DoRequest<Pagamento>(uri, "POST");
         }
 
+
+        /// <summary>
+        /// Essa API permite o cancelamento de um pedido que esteja pré-autorizado no Moip. 
+        /// </summary>
+        /// <param name="id">Id do peido no moip</param>
+        /// <returns>Pedido cancelado</returns>
+        //public Pagamento CancelarPedido(string id)
+        //{ 
+        //}
+
         #endregion
 
     }

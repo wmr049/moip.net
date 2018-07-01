@@ -7,6 +7,7 @@
     {
         public ReceiverType? Type { get; set; }
         public ContaMoip moipAccount { get; set; }
-        public Valores Amount { get; set; }
+        public ValoresRecebedor Amount { get; set; }
+        public bool FeePayor { get; set; }        
     }
 }

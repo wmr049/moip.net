@@ -116,6 +116,7 @@
     <Compile Include="V2\Model\Documento.cs" />
     <Compile Include="V2\Model\MeioPagamento.cs" />
     <Compile Include="V2\Model\Portador.cs" />
+    <Compile Include="V2\Model\ValoresRecebedor.cs" />
     <Compile Include="V2\V2Client.cs" />
   </ItemGroup>
   <ItemGroup>
