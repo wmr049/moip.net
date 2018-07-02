@@ -7,7 +7,7 @@ namespace Moip.Net.V2.Model
     /// </summary>
     public class Lancamento
     {
-        public int? Id { get; set; }
+        public string Id { get; set; }
         public string Event { get; set; }
         public EntryStatusType? Status { get; set; }
         public OperationType? Operation { get; set; }
