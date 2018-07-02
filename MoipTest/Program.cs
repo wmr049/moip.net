@@ -7,12 +7,44 @@ using Moip.Net.V2.Model;
 using Moip.Net;
 using System.Net;
 using Moip.Net.V2.Filter;
+using Quartz;
+using Quartz.Impl;
 
 namespace MoipTest
 {
     class Program
     {
         static void Main(string[] args)
+        {
+            // construct a scheduler factory
+            ISchedulerFactory schedFact = new StdSchedulerFactory();
+
+            // get a scheduler, start the schedular before triggers or anything else
+            IScheduler sched = schedFact.GetScheduler();
+            sched.Start();
+
+            // create job
+            IJobDetail job = JobBuilder.Create<MoipFunctions>()
+                    .WithIdentity("processarPedidosMOIP", "grupoMoip")
+                    .Build();
+
+            // create trigger
+            ITrigger trigger = TriggerBuilder.Create()
+                .WithIdentity("gatilhoMOIP", "grupoMoip")
+                .WithSimpleSchedule(x => x.WithIntervalInSeconds(30).RepeatForever())
+                .Build();
+
+            // Schedule the job using the job and trigger 
+            sched.ScheduleJob(job, trigger);            
+        }        
+    }
+
+    /// <summary>
+    /// SimpleJOb is just a class that implements IJOB interface. It implements just one method, Execute method
+    /// </summary>
+    public class MoipFunctions : IJob
+    {
+        void IJob.Execute(IJobExecutionContext context)
         {
             try
             {
@@ -22,37 +54,41 @@ namespace MoipTest
                     "QS7QERT7QEMHMJX79SZYD1QQM4C8TZUFZPXLUNIS"
                     );
 
-                //1) Criar Pedido
-                //CreateOrder(v2Client);
+            //    1) Criar Pedido
+            //    CreateOrder(v2Client);
+
+            //    2) Criar Pedido Com Repasse
+            //    CreateOrderRepasse(v2Client);
+
+            //    3) Listar Pedido com filtros
+            //    FiltrarPedidos(v2Client);
+
+            //    4) Consultar Pedido
+                ConsultarPedido(v2Client);
+
+            //    5) Cancelamento Total
+            //    CancelamentoPedido(v2Client);
+
+            //    6) Cancelamento Pagamento
+            //    CancelamentoPagamento(v2Client);
                 
-                //2) Criar Pedido Com Repasse
-                //CreateOrderRepasse(v2Client);
-
-                //3) Listar Pedido com filtros
-                //FiltrarPedidos(v2Client);
-
-                //4) Consultar Pedido
-                //ConsultarPedido(v2Client);
-
-                //5) Cancelamento Total
-                //CancelamentoPedido(v2Client);
-
-                //6) Cancelamento Pagamento
-                CancelamentoPagamento(v2Client);
-
-                Console.ReadKey();
             }
             catch (MoipException ex)
             {
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.ResponseError.Errors);
+                Console.ReadKey();
             }
+
 
         }
 
-        private static void CancelamentoPagamento(V2Client v2Client)
+        private static Pagamento CancelamentoPagamento(V2Client v2Client)
         {
-            throw new NotImplementedException();
+            var pagamento = "PAY-LZIGN8F3IHL0";
+            var pedidoCancelado = v2Client.CancelarPagamentoPreAutorizado(pagamento);
+
+            return pedidoCancelado;
         }
 
         private static void CancelamentoPedido(V2Client v2Client)
@@ -140,7 +176,8 @@ namespace MoipTest
         {
             var pedido = "ORD-5WAX9D2BC53I";
             var pedidoConsultado = v2Client.ConsultarPedido(pedido);
-            
+            Console.WriteLine(pedidoConsultado.Id);
+
             return pedidoConsultado;
         }
 
@@ -200,7 +237,7 @@ namespace MoipTest
 
             var clienteCriado = v2Client.CriarPedido(pedido);
             Console.WriteLine(clienteCriado);
-           
+
 
             return clienteCriado;
         }

@@ -192,7 +192,7 @@ namespace Moip.Net.V2
         /// <returns>Pagamento cancelado</returns>
         public Pagamento CancelarPagamentoPreAutorizado(string id)
         {
-            var uri = PathToUri(string.Format("payments/{0}/void", id));
+            var uri = PathToUri(string.Format("payments/{0}/refunds", id));
             return DoRequest<Pagamento>(uri, "POST");
         }
 
